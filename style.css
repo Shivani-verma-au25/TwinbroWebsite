@@ -36,7 +36,7 @@ html,body{
   position: fixed;
   z-index: 99;
   /* transform: translate(-50%,-50%); */
-  transition: all .1s ease;
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
 }
 
 #main{
@@ -214,9 +214,9 @@ nav{
   align-items: center;
   justify-content: center;
   animation-name: updown;
-  animation-duration: 6s;
+  animation-duration: 7s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease;
 }
 #c-2 #div-2{
   width:130px;
@@ -245,6 +245,10 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
+  animation-name: updown;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease
 }
 #c-3 #div-3{
   width:90px;
@@ -270,6 +274,10 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
+  animation-name: updown;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease
 }
 /* hero overlay */
 #hero-overlay{
@@ -352,7 +360,24 @@ nav{
 #overlay-right{
   width: 50%;
   height: 100%;
-  background-color: yellow;
+  /* background-color: yellow; */
+  position: relative;
+}
+#inner-overlay{
+  width: 50vw;
+  height: 100vh;
+  margin-top: 5vw;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+canvas{
+  width: 75%;
+  height: 65%;
+  position: absolute;
+  /* background-color: #b2a3a0; */
+  object-fit: cover;
 }
 
 /* ************** page2 ************** */
