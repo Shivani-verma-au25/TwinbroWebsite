@@ -873,10 +873,51 @@ function canvasSecond(){
   canvasSecond()
   
 
-  // 
+  // page4 circle 3d animation
 
+  const Img = document.querySelector('.outter-circle>img')
+  const cursor = document.querySelector('#cursor')
+  console.log(Img);
 
+  window.addEventListener('mousemove',function(dets){
+    // console.log(dets.x);
+    const rotx = 58 - dets.x/10
+    const roty = Math.abs(rotx)
+    console.log(roty);
+    console.log(rotx);
+    Img.style.transform =  `rotateX(${rotx}deg) rotateY(-${roty}deg)`
+    // cursor.style.backgrounColor = ''
+  })
 
+Img.addEventListener('mouseleave',function(dets){
+  setTimeout(() => {
+    Img.style.transform =  `rotateX(0deg) rotateY(0deg)`
+  }, 2000);
+})
+
+// cursor color change animation
+function addColorCursor(){
+  let center_ball = document.querySelector('#center-p4')
+  let cursor = document.querySelector('#cursor')
+  let digital_fab = document.querySelector('#digtal-fab')
+  
+  center_ball.addEventListener('mousemove',function(){
+    cursor.style.backgroundColor = '#00000048'
+  })
+
+  center_ball.addEventListener('mouseleave',function(){
+    cursor.style.backgroundColor = '#ffff'
+  })
+  // digital fabric animation
+  digital_fab.addEventListener('mousemove',function(){
+    cursor.style.backgroundColor = '#00000048'
+  })
+  digital_fab.addEventListener('mouseleave',function(){
+    cursor.style.backgroundColor = '#ffff'
+  })
+
+}
+addColorCursor()
 
 
 
