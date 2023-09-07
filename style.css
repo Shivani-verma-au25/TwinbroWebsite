@@ -672,6 +672,63 @@ canvas{
 /* ************** page5************* */
 #page5{
   width: 100vw;
-  height: 100vh;
+  height: 40vh;
   background-color: paleturquoise;
+  position: relative;
+}
+.upper-text-p5{
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.small-text-p5{
+  background-color: yellow;
+  /* position: relative; */
+  width: 100%;
+  height: 10%;
+}
+.small-text-p5>p{
+  font-size: 1.4vw;
+  font-family: e;
+  color: var(--secondry-bg-color);
+  /* margin-top: 4vw; */
+}
+.big-text-p5{
+  background-color: yellowgreen;
+  /* position: relative; */
+  width: 100%;
+  height: 20%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.big-text-p5>p{
+  font-size: 3.4vw;
+  font-family: e;
+  color: var(--text-color2);
+}
+
+/* ************* page6******************** */
+#page6{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #171313;
+}
+#page6>canvas{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ************ page7************** */
+#page7{
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
 }

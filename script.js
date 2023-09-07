@@ -877,14 +877,14 @@ function canvasSecond(){
 
   const Img = document.querySelector('.outter-circle>img')
   const cursor = document.querySelector('#cursor')
-  console.log(Img);
+  // console.log(Img);
 
   window.addEventListener('mousemove',function(dets){
     // console.log(dets.x);
     const rotx = 58 - dets.x/10
     const roty = Math.abs(rotx)
-    console.log(roty);
-    console.log(rotx);
+    // console.log(roty);
+    // console.log(rotx);
     Img.style.transform =  `rotateX(${rotx}deg) rotateY(-${roty}deg)`
     // cursor.style.backgrounColor = ''
   })
@@ -919,5 +919,244 @@ function addColorCursor(){
 }
 addColorCursor()
 
+// *********** page5 text animation ****************
+
+let tl3 = gsap.timeline({
+  scrollTrigger:{
+    trigger:'#page5',
+    scroller:'#main',
+    start:'0% 80%',
+    end:'20% 50%',
+    markers:true,
+    scrub:2
+  },
+  // stagger:.1
+})
+tl3.from('.small-text-p5>p',{
+    y:-30,
+    duration:1,
+    stagger:.1,
+})
 
 
+
+
+// ****************** page 5 canavs animation ********************
+
+function canvasThird(){
+  const canvas = document.querySelector("#page6>canvas");
+  const context = canvas.getContext("2d");
+  
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
+  
+  function files(index) {
+    var data = `
+    https://www.twinbru.com/img/frames/arch/salmon/1280/webp/000.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/001.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/002.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/003.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/004.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/005.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/006.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/007.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/008.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/009.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/010.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/011.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/012.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/013.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/014.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/015.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/016.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/017.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/018.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/019.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/020.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/021.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/022.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/023.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/024.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/025.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/026.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/027.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/028.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/029.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/030.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/031.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/032.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/033.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/034.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/035.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/036.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/037.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/038.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/039.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/040.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/041.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/042.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/043.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/044.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/045.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/046.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/047.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/048.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/049.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/050.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/051.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/052.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/053.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/054.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/055.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/056.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/057.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/058.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/059.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/060.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/061.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/062.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/063.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/064.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/065.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/066.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/067.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/068.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/069.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/070.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/071.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/072.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/073.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/074.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/075.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/076.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/077.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/078.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/079.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/080.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/081.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/082.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/083.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/084.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/085.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/086.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/087.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/088.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/089.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/090.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/091.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/092.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/093.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/094.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/095.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/096.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/097.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/098.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/099.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/100.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/101.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/102.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/103.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/104.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/105.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/106.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/107.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/108.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/109.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/110.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/111.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/112.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/113.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/114.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/115.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/116.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/117.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/118.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/119.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/120.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/121.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/122.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/123.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/124.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/125.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/126.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/127.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/128.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/129.webp
+  https://www.twinbru.com/img/frames/arch/salmon/1280/webp/130.webp
+    
+   `;
+    return data.split("\n")[index];
+  }
+  
+  const frameCount = 130;
+  
+  const images = [];
+  const imageSeq = {
+    frame: 1,
+  };
+  
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+  }
+  
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      scrub: 0.15,
+      trigger: `#page6`,
+      //   set start end according to preference
+      start: `top top`,
+      end: `600% top`,
+      scroller: `#main`,
+    },
+    onUpdate: render,
+  });
+  
+  images[1].onload = render;
+  
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
+  
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+  ScrollTrigger.create({
+    trigger: "#page6",
+    pin: true,
+    // markers:true,
+    scroller: `#main`,
+  //   set start end according to preference
+    start: `top top`,
+    end: `600% top`,
+  });
+  }
+  canvasThird()
