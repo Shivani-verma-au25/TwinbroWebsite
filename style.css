@@ -50,6 +50,7 @@ html{
   --secondry-bg-color:#c8a7a0;
   --secondry2-bg-color:#e5aca0;
   --text-color2:#fefdfc;
+  --text-secondory-color:#9999998b;
 }
 /* ********** page1 ********** */
 #page1{
@@ -672,14 +673,14 @@ canvas{
 /* ************** page5************* */
 #page5{
   width: 100vw;
-  height: 40vh;
-  background-color: paleturquoise;
+  /* height: vh; */
+  background-color: var(--bg-color);
   position: relative;
 }
 .upper-text-p5{
   width: 100%;
   height: 100%;
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -687,10 +688,15 @@ canvas{
   position: relative;
 }
 .small-text-p5{
-  background-color: yellow;
+  /* background-color: yellow; */
   /* position: relative; */
   width: 100%;
   height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 .small-text-p5>p{
   font-size: 1.4vw;
@@ -699,31 +705,141 @@ canvas{
   /* margin-top: 4vw; */
 }
 .big-text-p5{
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
   /* position: relative; */
   width: 100%;
   height: 20%;
   display:flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .big-text-p5>p{
   font-size: 3.4vw;
   font-family: e;
   color: var(--text-color2);
 }
-
+#canvas-part{
+  width: 100%;
+  height: 100vh;
+  /* background-color: hotpink; */
+  margin-top: 3vw;
+}
+#canvas-part>canvas{
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+}
 /* ************* page6******************** */
 #page6{
   width: 100vw;
-  height: 100vh;
+  height: 180vh;
   position: relative;
-  background-color: #171313;
+  background-color: var(--text-color2);
 }
-#page6>canvas{
+.inner-page-p6{
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vw 0;
+}
+.page6-left{
+  width: 50%;
+  height: 100%;
+  /* background-color: pink; */
+  padding: 3vw 6vw;
+}
+.left-top-p6{
+  width: 100%;
+  height: 25%;
+  /* background-color: greenyellow; */
+}
+.left-top-p6>h2{
+  font-size: 1.4vw;
+  font-family: e;
+  color: var(--text-secondory-color);
+}
+.left-top-p6>p{
+  font-size: 3.3vw;
+  font-family: e;
+  line-height: 1;
+  padding-right: 4vw;
+  /* padding: 0 6vw; */
+}
+.left-bottom-p6{
+  width: 100%;
+  height: 60%;
+  /* background-color: #966746; */
+}
+.wrapper-p6{
+  width: 100%;
+  height: 100%;
+  /* padding-top: 2vw; */
+}
+.elem-p6{
+  width: 100%;
+  height: 18%;
+  background-color: var(--text-color2);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: .2vw solid var(--text-secondory-color);
+}
+.elem-p6>h3{
+  font-size: 1.3vw;
+  font-family: b;
+  color: var(--text-secondory-color);
+}
+.elem-p6>p{
+  font-size: 2vw;
+  font-family: b;
+  padding-left: 1vw;
+  color: var(--text-secondory-color);
+}
+.elem-p6>i{
+  /* background-color: yellow; */
+  font-size: 1.5vw;
+  width: 9%;
+  padding-left: 1vw;
+  color: transparent;
+}
+.page6-right{
+  width: 50%;
+  height: 100%;
+  /* background-color: gray; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 3vw;
+}
+#wrapper-p6-right{
+  width: 70%;
+  height: 65%;
+  /* background-color: palegreen; */
+  overflow: hidden;
+}
+.elem-p6-right{
   width: 100%;
   height: 100%;
   position: relative;
+}
+.elem-p6-right>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .8s ease;
+}
+
+.wrapper-p6>.elem-p6:hover .elem-p6-right>#pic1{
+  background-image: none;
 }
 
 /* ************ page7************** */

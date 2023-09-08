@@ -436,7 +436,7 @@ tl1.to('nav>#center',{
   duration:1.2
 })
 tl1.to('#left>svg',{
-  rotate:'280deg',
+  rotate:'360deg',
   duration:2
 },"anm")
 tl1.to('#left>h2',{
@@ -921,30 +921,48 @@ addColorCursor()
 
 // *********** page5 text animation ****************
 
+// let tl3 = gsap.timeline({
+//   scrollTrigger:{
+//     trigger:'#page5',
+//     scroller:'#main',
+//     start:'0% 80%',
+//     end:'20% 50%',
+//     markers:true,
+//     scrub:2
+//   },
+//   // stagger:.1
+// })
+// tl3.from('.small-text-p5>p',{
+//     y:-30,
+//     duration:1,
+//     stagger:.1,
+// })
+
 let tl3 = gsap.timeline({
   scrollTrigger:{
     trigger:'#page5',
     scroller:'#main',
-    start:'0% 80%',
-    end:'20% 50%',
-    markers:true,
-    scrub:2
-  },
-  // stagger:.1
+    // markers:true,
+    start:'0% 90%',
+    end:'20% 70%',
+    scrub:3
+  }
 })
-tl3.from('.small-text-p5>p',{
-    y:-30,
-    duration:1,
-    stagger:.1,
+tl3.from('.small-text-p5 p',{
+  y:30,
+  duration:1,
+  stagger:.1,
 })
-
-
-
+tl3.from('.big-text-p5 p',{
+  y:150,
+  duration:1,
+  stagger:.1,
+})
 
 // ****************** page 5 canavs animation ********************
 
 function canvasThird(){
-  const canvas = document.querySelector("#page6>canvas");
+  const canvas = document.querySelector("#canvas-part>canvas");
   const context = canvas.getContext("2d");
   
   canvas.width = window.innerWidth;
@@ -1114,7 +1132,7 @@ function canvasThird(){
     ease: `none`,
     scrollTrigger: {
       scrub: 0.15,
-      trigger: `#page6`,
+      trigger: `#canvas-part`,
       //   set start end according to preference
       start: `top top`,
       end: `600% top`,
@@ -1150,7 +1168,7 @@ function canvasThird(){
     );
   }
   ScrollTrigger.create({
-    trigger: "#page6",
+    trigger: "#canvas-part",
     pin: true,
     // markers:true,
     scroller: `#main`,
@@ -1160,3 +1178,102 @@ function canvasThird(){
   });
   }
   canvasThird()
+
+  // ************** page6 *****************
+
+  function Page6(){
+  //   let imgs = document.querySelectorAll('.elem-p6-right>img')
+  //   let elems = document.querySelectorAll('.elem-p6')
+
+  //   elems.forEach(function(items){
+  //     items.addEventListener('mouseover',function(){
+  //       imgs.forEach(function(i){
+  //         i.style.transform = `translateY(-200%)`
+  //       })
+  //     })
+  //   }) 
+
+  //   elems.forEach(function(items){
+  //     items.addEventListener('mouseleave',function(){
+  //       imgs.forEach(function(i){
+  //         i.style.transform = `translateY(0%)`
+  //       })
+  //     })
+  //   }) 
+  // }
+
+    let el1 = document.querySelector('#p-1')
+    let el2 = document.querySelector('#p-2')
+    let el3 = document.querySelector('#p-3')
+    let el4 = document.querySelector('#p-4')
+    let el5 = document.querySelector('#p-5')
+
+    let pic1 = document.querySelector('#pic1')
+    let pic2 = document.querySelector('#pic2')
+    let pic3 = document.querySelector('#pic3')
+    let pic4 = document.querySelector('#pic4')
+    let pic5 = document.querySelector('#pic5')
+// pic1
+    el1.addEventListener('mouseover',function(){
+      pic1.style.transform = `translateY(0%)`
+      // pic1.style.zIndex = 3
+      pic2.style.transform = `translateY(100%)`
+      pic5.style.transform = `translateY(200%)`
+
+    })
+    // el1.addEventListener('mouseleave',function(){
+      // pic1.style.transform = `translateY(0%)`
+    // })
+// pic 2
+    el2.addEventListener('mouseover',function(){
+      pic1.style.transform = `translateY(-100%)`
+      pic2.style.transform = `translateY(-100%)`
+      pic3.style.transform = `translateY(200%)`
+      pic5.style.transform = `translateY(400%)`
+
+
+    })
+    el2.addEventListener('mouseleave',function(){
+      pic2.style.transform = `translateY(-100%)`
+      // pic2.style.transform = `translateY(-100%)`
+      
+    })
+    // pic3
+    el3.addEventListener('mouseover',function(){
+      pic2.style.transform = `translateY(-200%)`
+      pic3.style.transform = `translateY(-200%)`
+      pic4.style.transform = `translateY(300%)`
+      pic5.style.transform = `translateY(400%)`
+
+
+    })
+    el3.addEventListener('mouseleave',function(){
+      pic3.style.transform = `translateY(-200%)`
+      // pic4.style.transform = `translateY(-200%)`
+
+    })
+    // pic4
+    el4.addEventListener('mouseover',function(){
+      pic3.style.transform = `translateY(-300%)`
+      pic4.style.transform = `translateY(-300%)`
+      pic5.style.transform = `translateY(400%)`
+    })
+    el4.addEventListener('mouseleave',function(){
+      pic3.style.transform = `translateY(-300%)`
+      pic4.style.transform = `translateY(-300%)`
+      // pic5.style.transform = `translateY(-300%)`
+
+    })
+    // pic5
+    el5.addEventListener('mouseover',function(){
+      // pic4.style.transform = `translateY(-400%)`
+      pic4.style.transform = `translateY(-400%)`
+      pic5.style.transform = `translateY(-400%)`
+    })
+    el5.addEventListener('mouseleave',function(){
+      // pic4.style.transform = `translateY(-400%)`
+      // pic3.style.transform = `translateY(-300%)`
+      pic5.style.transform = `translateY(-400%)`
+    })
+  }
+  Page6()
