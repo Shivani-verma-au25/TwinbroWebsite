@@ -1218,7 +1218,8 @@ function canvasThird(){
       pic1.style.transform = `translateY(0%)`
       // pic1.style.zIndex = 3
       pic2.style.transform = `translateY(100%)`
-      pic5.style.transform = `translateY(200%)`
+      pic5.style.transform = `translateY(2
+      00%)`
 
     })
     // el1.addEventListener('mouseleave',function(){
@@ -1277,3 +1278,22 @@ function canvasThird(){
     })
   }
   Page6()
+
+
+  // mause size
+
+  function Hover(){
+    let elm = document.querySelectorAll('.elem-p6')
+    let cur =  document.querySelector('#cursor')
+
+    cur.addEventListener('mouseenter',function(){
+      elm.forEach(function(i,idx){
+        console.log(i);
+        
+      })
+    })
+  }
+  Hover()
+
+  // footer 
+ 
