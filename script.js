@@ -367,9 +367,9 @@ function customCursor(){
   let main = document.querySelector('#main')
 
   window.addEventListener('mousemove',(evnt)=>{
-    // cur.style.top = `${evnt.y}px`
-    // cur.style.left = `${evnt.x}px`
-    cur.style.transform = `translate(${evnt.clientX}px,${evnt.clientY}px)`
+    cur.style.top = `${evnt.y}px`
+    cur.style.left = `${evnt.x}px`
+    // cur.style.transform = `translate(${evnt.clientX}px,${evnt.clientY}px)`
   })
 }
 customCursor()
@@ -1201,7 +1201,7 @@ function canvasThird(){
   //     })
   //   }) 
   // }
-
+    let cur = document.querySelector('#cursor')
     let el1 = document.querySelector('#p-1')
     let el2 = document.querySelector('#p-2')
     let el3 = document.querySelector('#p-3')
@@ -1231,12 +1231,15 @@ function canvasThird(){
       pic2.style.transform = `translateY(-100%)`
       pic3.style.transform = `translateY(200%)`
       pic5.style.transform = `translateY(400%)`
+      cur.style.scale = 3
+      cur.style.backgroundColor = '#eeeee'
 
 
     })
     el2.addEventListener('mouseleave',function(){
       pic2.style.transform = `translateY(-100%)`
       // pic2.style.transform = `translateY(-100%)`
+      cur.style.scale = 1
       
     })
     // pic3
@@ -1245,24 +1248,28 @@ function canvasThird(){
       pic3.style.transform = `translateY(-200%)`
       pic4.style.transform = `translateY(300%)`
       pic5.style.transform = `translateY(400%)`
-
+      cur.style.scale = 3
+      cur.style.backgroundColor = '#eeeee'
 
     })
     el3.addEventListener('mouseleave',function(){
       pic3.style.transform = `translateY(-200%)`
       // pic4.style.transform = `translateY(-200%)`
-
+      cur.style.scale = 1
     })
     // pic4
     el4.addEventListener('mouseover',function(){
       pic3.style.transform = `translateY(-300%)`
       pic4.style.transform = `translateY(-300%)`
       pic5.style.transform = `translateY(400%)`
+      cur.style.scale = 3
+      cur.style.backgroundColor = '#eeeee'
     })
     el4.addEventListener('mouseleave',function(){
       pic3.style.transform = `translateY(-300%)`
       pic4.style.transform = `translateY(-300%)`
       // pic5.style.transform = `translateY(-300%)`
+      cur.style.scale = 1
 
     })
     // pic5
@@ -1270,11 +1277,14 @@ function canvasThird(){
       // pic4.style.transform = `translateY(-400%)`
       pic4.style.transform = `translateY(-400%)`
       pic5.style.transform = `translateY(-400%)`
+      cur.style.scale = 3
+      cur.style.backgroundColor = '#eeeee'
     })
     el5.addEventListener('mouseleave',function(){
       // pic4.style.transform = `translateY(-400%)`
       // pic3.style.transform = `translateY(-300%)`
       pic5.style.transform = `translateY(-400%)`
+      cur.style.scale = 1
     })
   }
   Page6()
@@ -1282,18 +1292,96 @@ function canvasThird(){
 
   // mause size
 
-  function Hover(){
-    let elm = document.querySelectorAll('.elem-p6')
-    let cur =  document.querySelector('#cursor')
-
-    cur.addEventListener('mouseenter',function(){
-      elm.forEach(function(i,idx){
-        console.log(i);
-        
-      })
-    })
-  }
-  Hover()
 
   // footer 
  
+function clrChnge(){
+  let pge6 = document.querySelector('.inner-page-p6') 
+  let ftr = document.querySelector('#page7')
+  let cur = document.querySelector('#cursor')
+
+  pge6.addEventListener('mousemove',function(){
+    cur.style.backgroundColor = '#999393'
+  })
+
+  pge6.addEventListener('mouseleave',function(){
+    cur.style.backgroundColor = '#fffff'
+  })
+
+  ftr.addEventListener('mousemove',function(){
+    cur.style.backgroundColor = '#999393'
+  })
+
+  // ftr.addEventListener('mouseleave',function(){
+  //   cur.style.backgroundColor = '#ffff'
+  // })
+}  
+clrChnge()
+
+// ************ footer *******************
+
+function txtHover(){
+  let para = document.querySelectorAll('.wrap-7>p')
+  let cur = document.querySelector('#cursor')
+  // let icons = document.querySelectorAll('.icons>')
+  console.log(para);
+  para.forEach(function(item){
+    item.addEventListener('mouseover',function(){
+      cur.style.scale = 3
+      cur.backgroundColor = '#999393'
+    })
+    item.addEventListener('mouseleave',function(){
+      cur.style.scale = 1
+      cur.backgroundColor = '#ffffe'
+    })
+  })
+}
+txtHover()
+
+function footIcon(){
+  let cur = document.querySelector('#cursor')
+  let icons = document.querySelectorAll('.icons>i')
+  icons.forEach((i)=>{
+    i.addEventListener('mouseover',()=>{
+      cur.style.scale = 3
+      cur.backgroundColor = '#999393'
+    })
+
+    i.addEventListener('mouseleave',()=>{
+      cur.style.scale = 1
+      cur.backgroundColor = '#999393'
+    })
+  })
+}
+footIcon()
+
+function intHover(){
+  let cur = document.querySelector('#cursor')
+  let inpts = document.querySelector('#int-2')
+  inpts.addEventListener('mouseenter',function(){
+    cur.style.scale = 3
+  })
+
+  inpts.addEventListener('mouseleave',function(){
+    cur.style.scale = 1
+  })
+}
+intHover()
+
+function spanaHover(){
+  let cur = document.querySelector('#cursor')
+  let span = document.querySelector('#wrpper-7-bottom-lft>p>span')
+  span.addEventListener('mouseenter',function(){
+    cur.style.scale = 3
+    span.style.color = 'black'
+  })
+
+  span.addEventListener('mouseleave',function(){
+    cur.style.scale = 1
+    span.style.color = '#999393'
+  })
+}
+spanaHover()
+
+
+

@@ -50,7 +50,7 @@ html{
   --secondry-bg-color:#c8a7a0;
   --secondry2-bg-color:#e5aca0;
   --text-color2:#fefdfc;
-  --text-secondory-color:#9999998b;
+  --text-secondory-color:#5f59598b;
 }
 /* ********** page1 ********** */
 #page1{
@@ -784,35 +784,43 @@ canvas{
   width: 100%;
   height: 18%;
   background-color: var(--text-color2);
+  position: relative;
+  border-bottom: .2vw solid var(--text-secondory-color);
+}
+.txt{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: .2vw solid var(--text-secondory-color);
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  transition: all .3s ease;
+  cursor: pointer;
 }
-.elem-p6>h3{
+.txt>h3{
   font-size: 1.3vw;
   font-family: b;
   color: var(--text-secondory-color);
+  transition: all .1s ease;
+  /* background-color: #999393; */
+
 }
-.elem-p6>p{
+.txt>p{
   font-size: 2vw;
   font-family: b;
   padding-left: 1vw;
   color: var(--text-secondory-color);
   transition: all .2s ease;
 }
-.left-bottom-p6>.wrapper-p6>.elem-p6>p:hover {
-  color:black;
-}
-.left-bottom-p6>.wrapper-p6>.elem-p6>i:hover{
-color: black;
-}
-.elem-p6>i{
+
+.txt>i{
   /* background-color: yellow; */
   font-size: 1.5vw;
   width: 9%;
   padding-left: 1vw;
-  color: transparent;
+  /* color: transparent; */
+  display: none;
+  transition: all .4s ease;
 }
 .page6-right{
   width: 50%;
@@ -823,6 +831,18 @@ color: black;
   justify-content: flex-start;
   padding-top: 3vw;
 }
+.txt:hover p{
+  color:black;
+}
+.txt:hover h3{
+  color:black;
+}
+.txt:hover i{
+  color:black;
+  display: block;
+}
+
+
 #wrapper-p6-right{
   width: 70%;
   height: 65%;
@@ -915,11 +935,13 @@ color: black;
 .wrpr-bottom>#int-2{
   background-color: #000;
   outline: none;
+  cursor: pointer;
 }
 .wrpr-bottom>#int-1{
   background-color:transparent;
   outline: none;
   width: 30%;
+  cursor: pointer;
 }
 .wrpr-bottom>#int-1::placeholder{
   font-family: b;
@@ -940,6 +962,8 @@ color: black;
   font-size: 1.3vw;
   font-family: b;
   color: var(--text-secondory-color);
+  transition: all .4 ease;
+  cursor: pointer;
 }
 .wrap-2{
   display: flex;
@@ -955,6 +979,7 @@ color: black;
 }
 .icons>i{
   font-size: 2vw;
+  cursor: pointer;
 }
 .wrap-2>i{
   margin-top: 4vw;
@@ -983,6 +1008,7 @@ color: black;
   font-family: b;
   margin-left: 1vw;
   color: var(--text-secondory-color);
+  cursor: pointer;
 
 }
 #wrpper-7-bottom-ryt{
