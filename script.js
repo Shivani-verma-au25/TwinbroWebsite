@@ -475,7 +475,7 @@ tl2.from('.animated-button>.btn-div',{
   stagger:.1,
 })
 tl2.from('.wrapper>.elem>svg',{
-  y:100,
+  y:300,
   duration:1,
   stagger:.25,
 })
@@ -828,7 +828,7 @@ function canvasSecond(){
       trigger: `#page3`,
       //   set start end according to preference
       start: `top top`,
-      end: `600% top`,
+      end: `300% top`,
       scroller: `#main`,
     },
     onUpdate: render,
@@ -918,26 +918,34 @@ function addColorCursor(){
 
 }
 addColorCursor()
+// *********** page4 text animation ****************
+let tl4 = gsap.timeline({
+  scrollTrigger:{
+    trigger:'#page4',
+    scroller:'#main',
+    // markers:true,
+    start:'10% 100%',
+    end:'10% 80%',
+    scrub:2
+  }
+})
+tl4.from('.small-text-p4 p',{
+  y:100,
+  duration:1,
+  stagger:.1,
+})
+tl4.from('.big-text-p4 p',{
+  y:150,
+  duration:1,
+  stagger:.1,
+})
+tl4.from('.animated-button>.btn-div-p4 a,.animated-button>.btn-div-p4 i',{
+  y:50,
+  duration:1,
+  stagger:.1,
+})
 
 // *********** page5 text animation ****************
-
-// let tl3 = gsap.timeline({
-//   scrollTrigger:{
-//     trigger:'#page5',
-//     scroller:'#main',
-//     start:'0% 80%',
-//     end:'20% 50%',
-//     markers:true,
-//     scrub:2
-//   },
-//   // stagger:.1
-// })
-// tl3.from('.small-text-p5>p',{
-//     y:-30,
-//     duration:1,
-//     stagger:.1,
-// })
-
 let tl3 = gsap.timeline({
   scrollTrigger:{
     trigger:'#page5',
@@ -1220,6 +1228,8 @@ function canvasThird(){
       pic2.style.transform = `translateY(100%)`
       pic5.style.transform = `translateY(2
       00%)`
+      cur.style.scale = 3
+      cur.style.mixblendMode =  `diffrenece`
 
     })
     // el1.addEventListener('mouseleave',function(){
@@ -1232,9 +1242,8 @@ function canvasThird(){
       pic3.style.transform = `translateY(200%)`
       pic5.style.transform = `translateY(400%)`
       cur.style.scale = 3
-      cur.style.backgroundColor = '#eeeee'
-
-
+      cur.style.backgroundColor = 'transparent'
+      cur.style.mixblendMode =  `diffrenece`
     })
     el2.addEventListener('mouseleave',function(){
       pic2.style.transform = `translateY(-100%)`
@@ -1249,7 +1258,8 @@ function canvasThird(){
       pic4.style.transform = `translateY(300%)`
       pic5.style.transform = `translateY(400%)`
       cur.style.scale = 3
-      cur.style.backgroundColor = '#eeeee'
+      cur.style.backgroundColor = '#dfd5d582'
+      cur.style.mixblendMode =  `diffrenece`
 
     })
     el3.addEventListener('mouseleave',function(){
@@ -1263,7 +1273,9 @@ function canvasThird(){
       pic4.style.transform = `translateY(-300%)`
       pic5.style.transform = `translateY(400%)`
       cur.style.scale = 3
-      cur.style.backgroundColor = '#eeeee'
+      cur.style.backgroundColor = '#dfd5d582'
+      cur.style.mixblendMode =  `diffrenece`
+
     })
     el4.addEventListener('mouseleave',function(){
       pic3.style.transform = `translateY(-300%)`
@@ -1278,18 +1290,36 @@ function canvasThird(){
       pic4.style.transform = `translateY(-400%)`
       pic5.style.transform = `translateY(-400%)`
       cur.style.scale = 3
-      cur.style.backgroundColor = '#eeeee'
+      cur.style.backgroundColor = '#dfd5d582'
+      cur.style.mixblendMode =  `diffrenece`
     })
     el5.addEventListener('mouseleave',function(){
       // pic4.style.transform = `translateY(-400%)`
       // pic3.style.transform = `translateY(-300%)`
       pic5.style.transform = `translateY(-400%)`
       cur.style.scale = 1
+      // cur.style.backdropFilter = `blur(5px)`;
+      cur.style.backgroundlinearGradient = `transparent,#6260607e`;
+
+
     })
   }
   Page6()
 
 
+  // image hovering
+function imgHoverCur(){
+  let imgWrap = document.querySelector('#wrapper-p6-right')
+  let cur = document.querySelector('#cursor')
+
+  imgWrap.addEventListener('mousemove',function(){
+    cur.style.scale = 4
+  })
+  imgWrap.addEventListener('mouseleave',function(){
+    cur.style.scale = 1
+  })
+}
+imgHoverCur()
   // mause size
 
 
@@ -1324,7 +1354,7 @@ function txtHover(){
   let para = document.querySelectorAll('.wrap-7>p')
   let cur = document.querySelector('#cursor')
   // let icons = document.querySelectorAll('.icons>')
-  console.log(para);
+  // console.log(para);
   para.forEach(function(item){
     item.addEventListener('mouseover',function(){
       cur.style.scale = 3
@@ -1349,7 +1379,7 @@ function footIcon(){
 
     i.addEventListener('mouseleave',()=>{
       cur.style.scale = 1
-      cur.backgroundColor = '#999393'
+      cur.backgroundColor = '#ffff'
     })
   })
 }
@@ -1378,10 +1408,96 @@ function spanaHover(){
 
   span.addEventListener('mouseleave',function(){
     cur.style.scale = 1
-    span.style.color = '#999393'
+    span.style.color = '#fffff'
   })
 }
 spanaHover()
 
 
+// nav hovering
 
+function navHovering(){
+  let cur = document.querySelector('#cursor')
+  let navitem = document.querySelectorAll('ul>li')
+  console.log(navitem);
+  navitem.forEach(function(item){
+    item.addEventListener('mousemove',function(){
+      cur.style.scale = 3
+      cur.style.border = `${.2}vw`
+      cur.style.borderColor = `red`
+      cur.style.backgroundColor = `transparent`
+    })
+    item.addEventListener('mouseleave',function(){
+      cur.style.scale = 1
+      cur.style.backgroundColor = `#fff`
+
+    })
+  })
+}
+navHovering()
+
+// nav icon hovering
+
+function NavIcon(){
+  let navIcn = document.querySelector('#right>i')
+  let cur = document.querySelector('#cursor')
+  navIcn.addEventListener('mousemove',function(){
+    cur.style.scale = 4
+    cur.style.backgroundColor = `black`;
+    // cur.style.mixblendMode = `difference`;
+  })
+  navIcn.addEventListener('mouseleave',function(){
+    cur.style.scale = 1
+    cur.style.backgroundColor = `#fff`;
+  })
+}
+NavIcon()
+
+// change icon
+
+function iconChange(){
+  let Icon = document.querySelector('#right')
+  let cur = document.querySelector('#cursor')
+  let flag = 0
+  Icon.addEventListener('click',function(){
+    if (flag == 0) {
+      Icon.innerHTML = `<i class="ri-close-line"></i>`
+      flag = 1
+    } else {
+      Icon.innerHTML = `<i class="ri-menu-fill"></i>`
+      flag = 0
+    }
+  })
+  // console.log(Icon);
+}
+iconChange()
+
+// arrrow animation
+
+function move(){
+  let arrrow = document.querySelector('#text>i')
+  let arrrowtxt = document.querySelector('#text')
+  let cur = document.querySelector('#cursor')
+  // console.log(arrrow);
+  arrrowtxt.addEventListener('mouseover',function(){
+    arrrow.style.transform = `translateX(${40}%)`
+  })
+  arrrowtxt.addEventListener('mouseleave',function(){
+    arrrow.style.transform = `translateX(${0}%)`
+  })
+}
+move()
+
+
+function move2(){
+  let arrrow = document.querySelector('.btn-div-p4>i')
+  let arrrowtxt = document.querySelector('.btn-div-p4')
+  console.log(arrrow);
+  arrrowtxt.addEventListener('mouseover',function(){
+    arrrow.style.transform = `translateX(${40}%)`
+  })
+  arrrowtxt.addEventListener('mouseleave',function(){
+    arrrow.style.transform = `translateX(${0}%)`
+  })
+}
+move2()
