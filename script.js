@@ -453,7 +453,7 @@ let tl2 = gsap.timeline({
   scrollTrigger:{
     trigger:'#page2',
     scroller:'#main',
-    markers:true,
+    // markers:true,
     start:'100% 110%',
     end:'100% 110%',
     scrub:3
@@ -828,7 +828,7 @@ function canvasSecond(){
       trigger: `#page3`,
       //   set start end according to preference
       start: `top top`,
-      end: `300% top`,
+      end: `600% top`,
       scroller: `#main`,
     },
     onUpdate: render,
@@ -1190,25 +1190,7 @@ function canvasThird(){
   // ************** page6 *****************
 
   function Page6(){
-  //   let imgs = document.querySelectorAll('.elem-p6-right>img')
-  //   let elems = document.querySelectorAll('.elem-p6')
 
-  //   elems.forEach(function(items){
-  //     items.addEventListener('mouseover',function(){
-  //       imgs.forEach(function(i){
-  //         i.style.transform = `translateY(-200%)`
-  //       })
-  //     })
-  //   }) 
-
-  //   elems.forEach(function(items){
-  //     items.addEventListener('mouseleave',function(){
-  //       imgs.forEach(function(i){
-  //         i.style.transform = `translateY(0%)`
-  //       })
-  //     })
-  //   }) 
-  // }
     let cur = document.querySelector('#cursor')
     let el1 = document.querySelector('#p-1')
     let el2 = document.querySelector('#p-2')
